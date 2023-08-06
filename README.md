@@ -10,8 +10,6 @@ This is a solution to the [Blogr landing page challenge on Frontend Mentor](http
   - [Links](#links)
 - [My process](#my-process)
   - [Technology Used](#technology-used)
-  - [What I Learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
@@ -53,14 +51,6 @@ This project was built using the following frontend technologies and methodologi
 - **Sass:** To write CSS more efficiently with nested rules, variables, and mixins.
 - **Hyphen Delimiter:** Incorporated to enhance the visual presentation and organization of elements, contributing to a more polished and user-friendly design.
 - **Mobile-first workflow:** To ensure a better user experience on smaller screens and devices.
-
-### What I learned
-
-A reflection on what was learned while completing the project.
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
 
 ### Useful resources
 
