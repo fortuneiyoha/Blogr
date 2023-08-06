@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+// 540x, 840px, 992px, 1200px, 1440px
+$breakpoints-up: (
+  "sm": "33.75em",
+  "md": "52.5em",
+  "lg": "62em",
+  "xl": "75em",
+  "xxl": "90em",
+  "largest": "93.75em",
+);
+
+// 539.84px, 839.84px, 991.84px, 1199.84px
+$breakpoints-down: (
+  "sm": "33.74rem",
+  "md": "52.49em",
+  "lg": "61.99em",
+  "xl": "74.99em",
+  "xxl": "89.99em",
+  "largest": "93.74.99em",
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+// Flexbox
+@mixin flex($justify: flex-start, $align: flex-start) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin inline-flex($justify: flex-start, $align: flex-start) {
+  display: inline-flex;
+  justify-content: $justify;
+  align-items: $align;
+}

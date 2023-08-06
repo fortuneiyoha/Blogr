@@ -1,0 +1,543 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+@use "../abstracts/" as *;
+
+/*
+ * ┌───────────────────────────────────────────────────────────────────────┐
+ * │                        Hidden Element Classes                         │
+ * └───────────────────────────────────────────────────────────────────────┘
+ */
+
+// Hide element while making it readable for screen readers
+%visually-hidden {
+  overflow: hidden;
+  position: absolute;
+  opacity: 0;
+}
+
+.visually-hidden {
+  @extend %visually-hidden;
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+
+  &-focusable {
+    @extend %visually-hidden;
+    margin-left: -2rem;
+    transition: none;
+
+    &:focus {
+      margin-left: 0;
+      overflow: visible;
+      opacity: 1;
+    }
+  }
+}
+
+/*
+ * ┌───────────────────────────────────────────────────────────────────────┐
+ * │                              Text Classes                             │
+ * └───────────────────────────────────────────────────────────────────────┘
+ */
+
+//
+// Alignment
+//
+.text-start {
+  text-align: start;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+//
+// Size
+//
+// ! Write better class names for the **helpers**.
+.small {
+  font-size: var(--fs-300);
+}
+
+.text-xs {
+  font-size: var(--fs-400);
+}
+
+.text-sm {
+  font-size: var(--fs-500);
+}
+
+.text-md {
+  font-size: var(--fs-600);
+}
+
+.text-lg {
+  font-size: var(--fs-700);
+}
+
+.text-xl {
+  font-size: var(--fs-800);
+}
+
+.text-xxl {
+  // font-size: font-size: clamp(25px, 30px + 0.3vw , calc(var(--fs-600)*3.5));
+  // font-size: calc(var(--fs-600) * 3.5);
+  // ! calculate using math: Equation of a line || Use "Utopia" size generator.
+  font-size: min(var(--fs-600) + 5.5vw, 3.5rem);
+}
+
+//
+// Color
+//
+//  ! Add the remaining classes
+.text-light {
+  color: var(--clr-neutral-100);
+}
+
+.text-grey {
+  color: var(--clr-neutral-300);
+}
+
+.text-dark {
+  color: var(--clr-neutral-500);
+}
+
+// ! Add remaining classes below
+
+.text-accent-1 {
+  color: var(--clr-accent-1);
+}
+
+.text-accent-2 {
+  color: var(--clr-accent-2);
+}
+
+//
+// Semantic
+//
+.title {
+  font-size: var(--fs-primary-heading);
+}
+
+.sub-title {
+  font-size: var(--fs-secondary-heading);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  font-weight: var(--fw-light);
+}
+
+.fluid-title {
+  font-size: var(--fs-fluid-primary-heading);
+}
+
+.fluid-sub-title {
+  font-size: var(--fs-fluid-secondary-heading);
+}
+
+.fluid-lead {
+  font-size: var(--fs-fluid-lead);
+}
+
+//
+// Weight
+//
+.fw-lighter {
+  font-weight: var(--fw-lighter);
+}
+
+.fw-light {
+  font-weight: var(--fw-light);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fw-medium {
+  font-weight: var(--fw-medium);
+}
+
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-bolder {
+  font-weight: var(--fw-bolder);
+}
+
+/*
+ * ┌───────────────────────────────────────────────────────────────────────┐
+ * │                          Background Classes                           │
+ * └───────────────────────────────────────────────────────────────────────┘
+ */
+
+//
+// Color
+//
+.bg-light {
+  background-color: var(--clr-neutral-100);
+}
+
+.bg-dark {
+  background-color: var(--clr-neutral-900);
+}
+
+//
+// Gradient
+//
+.bg-gradient-accent {
+  background-image: var(--gradient-accent);
+}
+
+.bg-gradient-neutral {
+  background-image: var(--gradient-neutral);
+}
+
+/*
+ * ┌───────────────────────────────────────────────────────────────────────┐
+ * │                            Flexbox Classes                            │
+ * └───────────────────────────────────────────────────────────────────────┘
+ */
+
+.d-flex {
+  @include flex;
+}
+
+.d-inline-flex {
+  @include inline-flex;
+}
+
+/*
+ * ┌───────────────────────────────────────────────────────────────────────┐
+ * │                            Spacer Classes                             │
+ * └───────────────────────────────────────────────────────────────────────┘
+ */
+
+//
+// Margin
+//
+.mx-auto {
+  margin-inline: auto;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.m-1 {
+  margin: var(--spacer-400);
+}
+
+.m-2 {
+  margin: var(--spacer-500);
+}
+
+.m-3 {
+  margin: var(--spacer-600);
+}
+
+.m-4 {
+  margin: var(--spacer-700);
+}
+
+.m-5 {
+  margin: var(--spacer-800);
+}
+
+.m-6 {
+  margin: var(--spacer-900);
+}
+
+.my-1 {
+  margin-block: var(--spacer-400);
+}
+
+.my-2 {
+  margin-block: var(--spacer-500);
+}
+
+.my-3 {
+  margin-block: var(--spacer-600);
+}
+
+.my-4 {
+  margin-block: var(--spacer-700);
+}
+
+.my-5 {
+  margin-block: var(--spacer-800);
+}
+
+.my-6 {
+  margin-block: var(--spacer-900);
+}
+
+// Margin Top
+.mt-1 {
+  margin-block-start: var(--spacer-400);
+}
+
+.mt-2 {
+  margin-block-start: var(--spacer-500);
+}
+
+.mt-3 {
+  margin-block-start: var(--spacer-600);
+}
+
+.mt-4 {
+  margin-block-start: var(--spacer-700);
+}
+
+.mt-5 {
+  margin-block-start: var(--spacer-800);
+}
+
+.mt-6 {
+  margin-block-start: var(--spacer-900);
+}
+
+// Margin Right
+.me-1 {
+  margin-inline-end: var(--spacer-400);
+}
+
+.me-2 {
+  margin-inline-end: var(--spacer-500);
+}
+
+.me-3 {
+  margin-inline-end: var(--spacer-600);
+}
+
+.me-4 {
+  margin-inline-end: var(--spacer-700);
+}
+
+.me-5 {
+  margin-inline-end: var(--spacer-800);
+}
+
+.me-6 {
+  margin-inline-end: var(--spacer-900);
+}
+
+// Margin Bottom
+.mb-1 {
+  margin-block-end: var(--spacer-400);
+}
+
+.mb-2 {
+  margin-block-end: var(--spacer-500);
+}
+
+.mb-3 {
+  margin-block-end: var(--spacer-600);
+}
+
+.mb-4 {
+  margin-block-end: var(--spacer-700);
+}
+
+.mb-5 {
+  margin-block-end: var(--spacer-800);
+}
+
+.mb-6 {
+  margin-block-end: var(--spacer-900);
+}
+
+// Margin Left
+.ms-1 {
+  margin-inline-start: var(--spacer-400);
+}
+
+.ms-2 {
+  margin-inline-start: var(--spacer-500);
+}
+
+.ms-3 {
+  margin-inline-start: var(--spacer-600);
+}
+
+.ms-4 {
+  margin-inline-start: var(--spacer-700);
+}
+
+.ms-5 {
+  margin-inline-start: var(--spacer-800);
+}
+
+.ms-6 {
+  margin-inline-start: var(--spacer-900);
+}
+
+//
+// Padding
+//
+.p-0 {
+  padding: 0;
+}
+
+.p-1 {
+  padding: var(--spacer-400);
+}
+
+.p-2 {
+  padding: var(--spacer-500);
+}
+
+.p-3 {
+  padding: var(--spacer-600);
+}
+
+.p-4 {
+  padding: var(--spacer-700);
+}
+
+.p-5 {
+  padding: var(--spacer-800);
+}
+
+.p-6 {
+  padding: var(--spacer-900);
+}
+
+.py-1 {
+  padding-block: var(--spacer-400);
+}
+
+.py-2 {
+  padding-block: var(--spacer-500);
+}
+
+.py-3 {
+  padding-block: var(--spacer-600);
+}
+
+.py-4 {
+  padding-block: var(--spacer-700);
+}
+
+.py-5 {
+  padding-block: var(--spacer-800);
+}
+
+.py-6 {
+  padding-block: var(--spacer-900);
+}
+
+// Padding Top
+.pt-1 {
+  padding-block-start: var(--spacer-400);
+}
+
+.pt-2 {
+  padding-block-start: var(--spacer-500);
+}
+
+.pt-3 {
+  padding-block-start: var(--spacer-600);
+}
+
+.pt-4 {
+  padding-block-start: var(--spacer-700);
+}
+
+.pt-5 {
+  padding-block-start: var(--spacer-800);
+}
+
+.pt-6 {
+  padding-block-start: var(--spacer-900);
+}
+
+// Padding Right
+.pe-1 {
+  padding-inline-end: var(--spacer-400);
+}
+
+.pe-2 {
+  padding-inline-end: var(--spacer-500);
+}
+
+.pe-3 {
+  padding-inline-end: var(--spacer-600);
+}
+
+.pe-4 {
+  padding-inline-end: var(--spacer-700);
+}
+
+.pe-5 {
+  padding-inline-end: var(--spacer-800);
+}
+
+.pe-6 {
+  padding-inline-end: var(--spacer-900);
+}
+
+// Padding Bottom
+.pb-1 {
+  padding-block-end: var(--spacer-400);
+}
+
+.pb-2 {
+  padding-block-end: var(--spacer-500);
+}
+
+.pb-3 {
+  padding-block-end: var(--spacer-600);
+}
+
+.pb-4 {
+  padding-block-end: var(--spacer-700);
+}
+
+.pb-5 {
+  padding-block-end: var(--spacer-800);
+}
+
+.pb-6 {
+  padding-block-end: var(--spacer-900);
+}
+
+// Padding Left
+.ps-1 {
+  padding-inline-start: var(--spacer-400);
+}
+
+.ps-2 {
+  padding-inline-start: var(--spacer-500);
+}
+
+.ps-3 {
+  padding-inline-start: var(--spacer-600);
+}
+
+.ps-4 {
+  padding-inline-start: var(--spacer-700);
+}
+
+.ps-5 {
+  padding-inline-start: var(--spacer-800);
+}
+
+.ps-6 {
+  padding-inline-start: var(--spacer-900);
+}

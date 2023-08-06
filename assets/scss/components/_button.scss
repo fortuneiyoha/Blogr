@@ -1,0 +1,41 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+%btn-outline-none {
+  outline-color: transparent;
+}
+
+.btn {
+  background: transparent;
+  border: 0.0625rem solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-button);
+  font-weight: var(--fw-medium);
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 200ms;
+
+  &-primary {
+    background: var(--clr-neutral-100);
+    color: var(--clr-primary-200);
+    @extend %btn-outline-none;
+
+    &:is(:hover, :focus-visible) {
+      background-color: var(--clr-primary-100);
+      color: var(--clr-neutral-100);
+    }
+  }
+
+  &-outline {
+    border-color: var(--clr-neutral-100);
+    @extend %btn-outline-none;
+
+    &:is(:hover, :focus-visible) {
+      background-color: var(--clr-neutral-100);
+      color: var(--clr-primary-200);
+    }
+  }
+}

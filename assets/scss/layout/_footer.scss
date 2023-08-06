@@ -1,0 +1,58 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+@use "../abstracts/" as *;
+
+.footer {
+  border-top-right-radius: calc(var(--spacer-400) * 8);
+  color: var(--clr-neutral-300);
+  font-family: var(--ff-secondary);
+
+  @include breakpoint-up(sm) {
+    text-align: start;
+  }
+}
+
+.footer .grid {
+  grid-auto-columns: auto;
+  place-items: flex-start center;
+
+  @include breakpoint-up(sm) {
+    --column-count: 2;
+  }
+
+  @include breakpoint-up(md) {
+    --column-count: 3;
+  }
+
+  @include breakpoint-up(lg) {
+    --column-count: 4;
+  }
+}
+
+.footer .column-logo {
+  @include breakpoint-up(sm) {
+    grid-column: span 2;
+  }
+
+  @include breakpoint-up(md) {
+    grid-column: 1;
+  }
+}
+
+.footer .column-list {
+  @include breakpoint-up(md) {
+    justify-self: flex-start;
+  }
+}
+
+.footer-item:not(:last-child) {
+  margin-bottom: var(--spacer-400);
+}
+
+.attribution {
+  font-size: clamp(0.65rem, 0.84rem + 0.1vw, 1.5rem);
+  line-height: 1.8;
+  width: 70%;
+}

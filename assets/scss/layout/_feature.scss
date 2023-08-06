@@ -1,0 +1,157 @@
+// ---------------------------------------------------
+// This file contains all styles related to
+// the introduction of the site/application.
+// ---------------------------------------------------
+
+@use "../abstracts/" as *;
+
+.feature {
+  isolation: isolate;
+  position: relative;
+  text-align: center;
+
+  // ! Fix fluid font sizes
+  //
+  // &-title {
+  //   font-size: min(var(--fs-600) + 2.5vw, 1.5rem);
+  // }
+
+  // &-sub-title {
+  //   font-size: min(var(--fs-600) + 2.5vw, 1.5rem);
+  // }
+
+  @include breakpoint-up(md) {
+    text-align: start;
+  }
+}
+
+.feature-editor {
+  @include breakpoint-up(md) {
+    margin-block: calc(var(--spacer-400) * 10) calc(var(--spacer-400) * 7);
+
+    .feature-title {
+      margin-block-end: var(--spacer-900);
+    }
+  }
+}
+
+.feature-mobile {
+  border-radius: 0 calc(var(--spacer-400) * 8);
+
+  &::before,
+  &::after {
+    border-radius: inherit;
+    content: "";
+    height: 37.5rem; // 600px
+    inset: 0;
+    inset-block-start: 60%;
+    overflow: hidden;
+    position: absolute;
+    transform: translateY(-40%);
+
+    @include breakpoint-up(md) {
+      height: 25rem; // 400px
+      inset-block-start: 48%;
+      transform: translateY(-52%);
+    }
+  }
+
+  &::before {
+    background: url(../images/bg-pattern-circles.svg) no-repeat center top -118%;
+    background-size: 31.25rem; // 500px
+    z-index: -1;
+
+    @include breakpoint-up(md) {
+      background-position: top 80% left -40%;
+      background-size: auto;
+    }
+  }
+
+  &::after {
+    background-image: var(--gradient-neutral);
+    z-index: -2;
+  }
+
+  @include breakpoint-up(md) {
+    margin-block-end: calc(var(--spacer-400) * 6);
+  }
+
+  @include breakpoint-up(lg) {
+    margin-block-end: calc(var(--spacer-400) * 7);
+  }
+
+  @include breakpoint-up(xxl) {
+    margin-block-end: calc(var(--spacer-400) * 10);
+  }
+
+  @include breakpoint-down(md) {
+    margin-block-end: calc(var(--spacer-600) * 5.5);
+  }
+}
+
+.feature-laptop {
+  @include breakpoint-up(md) {
+    margin-block-end: calc(var(--spacer-400) * 6);
+  }
+
+  @include breakpoint-up(lg) {
+    margin-block-end: calc(var(--spacer-400) * 14);
+  }
+
+  @include breakpoint-up(xxl) {
+    margin-block-end: calc(var(--spacer-400) * 18);
+  }
+}
+
+//
+// Illustrations
+//
+.illustration-reverse {
+  @include breakpoint-up(md) {
+    order: 2;
+  }
+}
+
+:is(.illustration-editor, .illustration-laptop) img {
+  @include breakpoint-up(lg) {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: var(--left);
+    inset-inline-end: var(--right);
+    transform: translateY(-50%);
+    width: var(--width, 50rem); // 800px
+  }
+
+  @include breakpoint-up(largest) {
+    position: static;
+    transform: none;
+  }
+}
+
+.illustration-editor img {
+  @include breakpoint-up(lg) {
+    --right: -30%;
+  }
+
+  @include breakpoint-up(xl) {
+    --right: -20%;
+  }
+
+  @include breakpoint-up(xxl) {
+    --right: -16%;
+  }
+}
+
+.illustration-laptop img {
+  @include breakpoint-up(lg) {
+    --left: -28%;
+  }
+
+  @include breakpoint-up(xl) {
+    --left: -12%;
+  }
+
+  @include breakpoint-up(xxl) {
+    --left: -15%;
+  }
+}
