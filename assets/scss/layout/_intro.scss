@@ -29,10 +29,11 @@
     }
   }
 
+  .text-xxl {
+    font-size: min(var(--fs-600) + 5.5vw, 3.5rem);
+  }
+
   p {
-    // ! 1. Calculate using math: Equation of a line ||
-    //      OR Use "Utopia" size generator.
-    // ! 2. Give `<element>` a meaningful class name.
     font-size: min(var(--fs-600) + 5.5vw, 1.2rem);
   }
 

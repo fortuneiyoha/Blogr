@@ -10,16 +10,6 @@
   position: relative;
   text-align: center;
 
-  // ! Fix fluid font sizes
-  //
-  // &-title {
-  //   font-size: min(var(--fs-600) + 2.5vw, 1.5rem);
-  // }
-
-  // &-sub-title {
-  //   font-size: min(var(--fs-600) + 2.5vw, 1.5rem);
-  // }
-
   @include breakpoint-up(md) {
     text-align: start;
   }

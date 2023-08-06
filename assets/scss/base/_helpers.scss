@@ -63,7 +63,6 @@
 //
 // Size
 //
-// ! Write better class names for the **helpers**.
 .small {
   font-size: var(--fs-300);
 }
@@ -89,16 +88,12 @@
 }
 
 .text-xxl {
-  // font-size: font-size: clamp(25px, 30px + 0.3vw , calc(var(--fs-600)*3.5));
-  // font-size: calc(var(--fs-600) * 3.5);
-  // ! calculate using math: Equation of a line || Use "Utopia" size generator.
-  font-size: min(var(--fs-600) + 5.5vw, 3.5rem);
+  font-size: var(--fs-900);
 }
 
 //
 // Color
 //
-//  ! Add the remaining classes
 .text-light {
   color: var(--clr-neutral-100);
 }
@@ -110,8 +105,6 @@
 .text-dark {
   color: var(--clr-neutral-500);
 }
-
-// ! Add remaining classes below
 
 .text-accent-1 {
   color: var(--clr-accent-1);
@@ -135,18 +128,6 @@
 .lead {
   font-size: var(--fs-lead);
   font-weight: var(--fw-light);
-}
-
-.fluid-title {
-  font-size: var(--fs-fluid-primary-heading);
-}
-
-.fluid-sub-title {
-  font-size: var(--fs-fluid-secondary-heading);
-}
-
-.fluid-lead {
-  font-size: var(--fs-fluid-lead);
 }
 
 //

@@ -69,21 +69,6 @@
   --fs-nav: var(--fs-500);
   --fs-button: var(--fs-500);
 
-  // Fluid Steps
-  --fs-fluid-primary-heading: var(--step-2);
-  --fs-fluid-secondary-heading: var(--step-1);
-  --fs-fluid-lead: var(--step-0);
-
-  /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1440,18,1.25,6,0,375-540-720&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-
-  --step-0: clamp(1rem, calc(0.96rem + 0.18vw), 1.13rem);
-  --step-1: clamp(1.2rem, calc(1.14rem + 0.29vw), 1.41rem);
-  --step-2: clamp(1.44rem, calc(1.35rem + 0.45vw), 1.76rem);
-  --step-3: clamp(1.73rem, calc(1.59rem + 0.67vw), 2.2rem);
-  --step-4: clamp(2.07rem, calc(1.88rem + 0.96vw), 2.75rem);
-  --step-5: clamp(2.49rem, calc(2.22rem + 1.35vw), 3.43rem);
-  --step-6: clamp(2.99rem, calc(2.61rem + 1.86vw), 4.29rem);
-
   // * Spacer
   --spacer-100: 0.25rem; // 4px
   --spacer-200: 0.5rem; // 8px
