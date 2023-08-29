@@ -2,25 +2,19 @@
 // This file contains all @font-face declarations.
 // -----------------------------------------------------------------------------
 
-/* 
- * ┌────────────────────────────────────────────────────────────────────────┐
- * │            Convert fonts from `.ttf` to `.woff` / `.woff2`             │
- * └────────────────────────────────────────────────────────────────────────┘
- */
-
 // Overpass
 @font-face {
   font-family: "Overpass";
   font-weight: 300;
   font-display: swap;
-  src: url(../fonts/Overpass/overpass-light.ttf) /* format(ttf) */;
+  src: url(../fonts/Overpass/overpass-light.ttf);
 }
 
 @font-face {
   font-family: "Overpass";
   font-weight: 600;
   font-display: swap;
-  src: url(../fonts/Overpass/overpass-bold.ttf) /* format(ttf) */;
+  src: url(../fonts/Overpass/overpass-bold.ttf);
 }
 
 // Ubuntu
@@ -28,19 +22,19 @@
   font-family: "Ubuntu";
   font-weight: 400;
   font-display: swap;
-  src: url(../fonts/Ubuntu/ubuntu-regular.ttf) /* format(ttf) */;
+  src: url(../fonts/Ubuntu/ubuntu-regular.ttf);
 }
 
 @font-face {
   font-family: "Ubuntu";
   font-weight: 500;
   font-display: swap;
-  src: url(../fonts/Ubuntu/ubuntu-medium.ttf) /* format(ttf) */;
+  src: url(../fonts/Ubuntu/ubuntu-medium.ttf);
 }
 
 @font-face {
   font-family: "Ubuntu";
   font-weight: 700;
   font-display: swap;
-  src: url(../fonts/Ubuntu/ubuntu-bold.ttf) /* format(ttf) */;
+  src: url(../fonts/Ubuntu/ubuntu-bold.ttf);
 }

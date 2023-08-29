@@ -5,9 +5,14 @@
 @use "../abstracts/" as *;
 
 .footer {
-  border-top-right-radius: calc(var(--spacer-400) * 8);
+  background-color: var(--clr-neutral-900);
+  border-start-end-radius: calc(var(--spacer-400) * 8);
   color: var(--clr-neutral-300);
   font-family: var(--ff-secondary);
+
+  &-link {
+    font-size: var(--fs-600);
+  }
 
   @include breakpoint-up(sm) {
     text-align: start;
@@ -52,7 +57,6 @@
 }
 
 .attribution {
-  font-size: clamp(0.65rem, 0.84rem + 0.1vw, 1.5rem);
   line-height: 1.8;
   width: 70%;
 }

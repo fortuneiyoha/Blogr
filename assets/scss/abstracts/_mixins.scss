@@ -2,39 +2,24 @@
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
 
-// 540x, 840px, 992px, 1200px, 1440px
-$breakpoints-up: (
-  "sm": "33.75em",
-  "md": "52.5em",
-  "lg": "62em",
-  "xl": "75em",
-  "xxl": "90em",
-  "largest": "93.75em",
-);
+@use "variables" as *;
 
-// 539.84px, 839.84px, 991.84px, 1199.84px
-$breakpoints-down: (
-  "sm": "33.74rem",
-  "md": "52.49em",
-  "lg": "61.99em",
-  "xl": "74.99em",
-  "xxl": "89.99em",
-  "largest": "93.74.99em",
-);
-
+// Breakpoints
+// Use to create styles specific for targeted screen sizes
 @mixin breakpoint-up($size) {
-  @media (min-width: map-get($breakpoints-up, $size)) {
+  @media (min-width: map-get($breakpoint-up, $size)) {
     @content;
   }
 }
 
 @mixin breakpoint-down($size) {
-  @media (max-width: map-get($breakpoints-down, $size)) {
+  @media (max-width: map-get($breakpoint-down, $size)) {
     @content;
   }
 }
 
 // Flexbox
+// Use for the layout and alignment of flexible content
 @mixin flex($justify: flex-start, $align: flex-start) {
   display: flex;
   justify-content: $justify;
@@ -45,4 +30,20 @@ $breakpoints-down: (
   display: inline-flex;
   justify-content: $justify;
   align-items: $align;
+}
+
+// Visually Hidden
+// Hide element while making it readable for screen readers
+@mixin visually-hidden() {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  opacity: 0;
 }

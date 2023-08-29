@@ -4,109 +4,57 @@
 
 @use "../abstracts/" as *;
 
-/*
- * ┌───────────────────────────────────────────────────────────────────────┐
- * │                        Hidden Element Classes                         │
- * └───────────────────────────────────────────────────────────────────────┘
+/**
+ * ┌────────────────────────────────────────────────────────┐
+ * │                 Hidden Element Classes                 │
+ * └────────────────────────────────────────────────────────┘
  */
 
 // Hide element while making it readable for screen readers
-%visually-hidden {
-  overflow: hidden;
-  position: absolute;
-  opacity: 0;
-}
-
 .visually-hidden {
-  @extend %visually-hidden;
-  border: 0;
-  clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  width: 1px;
+  @include visually-hidden;
 
-  &-focusable {
-    @extend %visually-hidden;
-    margin-left: -2rem;
-    transition: none;
-
-    &:focus {
-      margin-left: 0;
-      overflow: visible;
-      opacity: 1;
-    }
+  &-focusable:not(:focus):not(:focus-within) {
+    @extend .visually-hidden;
   }
 }
 
-/*
- * ┌───────────────────────────────────────────────────────────────────────┐
- * │                              Text Classes                             │
- * └───────────────────────────────────────────────────────────────────────┘
+/**
+ * ┌────────────────────────────────────────────────────────┐
+ * │                       Text Classes                     │
+ * └────────────────────────────────────────────────────────┘
  */
 
 //
 // Alignment
 //
-.text-start {
-  text-align: start;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-end {
-  text-align: end;
+@each $align in $text-align {
+  .text-#{$align} {
+    text-align: #{$align};
+  }
 }
 
 //
-// Size
+// Sizes
 //
-$sizes: (
-  small: var(--fs-300),
-  xs: var(--fs-400),
-  sm: var(--fs-500),
-  md: var(--fs-600),
-  lg: var(--fs-700),
-  xl: var(--fs-800),
-  xxl: var(--fs-900),
-);
-
-@each $key, $size in $sizes {
-  .text-#{$key} {
-    font-size: #{$size};
+@each $size, $value in $text-sizes {
+  .text-#{$size} {
+    font-size: #{$value};
   }
 }
 
 //
 // Color
 //
-$colors: (
-  "light": var(--clr-neutral-100),
-  "grey": var(--clr-neutral-300),
-  "dark": var(--clr-neutral-500),
-  "accent-1": var(--clr-accent-1),
-  "accent-2": var(--clr-accent-2),
-);
-
-@each $key, $color in $colors {
-  .text-#{$key} {
-    color: #{$color};
+@each $color, $value in $util-colors {
+  .text-#{$color} {
+    color: #{$value};
   }
 }
 
 //
 // Semantic
 //
-.title {
-  font-size: var(--fs-primary-heading);
-}
-
-.sub-title {
-  font-size: var(--fs-secondary-heading);
-}
-
 .lead {
   font-size: var(--fs-lead);
   font-weight: var(--fw-light);
@@ -115,124 +63,59 @@ $colors: (
 //
 // Weight
 //
-$weights: (
-  "lighter": var(--fw-lighter),
-  "light": var(--fw-light),
-  "regular": var(--fw-regular),
-  "medium": var(--fw-medium),
-  "semi-bold": var(--fw-semi-bold),
-  "bold": var(--fw-bold),
-  "bolder": var(--fw-bolder),
-);
-
-@each $key, $weight in $weights {
-  .fw-#{$key} {
-    font-weight: #{$weight};
+// Font Weights
+@each $weight in map-keys($font-weights) {
+  .fw-#{$weight} {
+    font-weight: var(--fw-#{$weight});
   }
 }
 
-/*
- * ┌───────────────────────────────────────────────────────────────────────┐
- * │                          Background Classes                           │
- * └───────────────────────────────────────────────────────────────────────┘
+/**
+ * ┌────────────────────────────────────────────────────────┐
+ * │                      Spacer Classes                    │
+ * └────────────────────────────────────────────────────────┘
  */
 
-//
-// Color
-//
-.bg-light {
-  background-color: var(--clr-neutral-100);
-}
-
-.bg-dark {
-  background-color: var(--clr-neutral-900);
-}
-
-//
-// Gradient
-//
-.bg-gradient-accent {
-  background-image: var(--gradient-accent);
-}
-
-.bg-gradient-neutral {
-  background-image: var(--gradient-neutral);
-}
-
-/*
- * ┌───────────────────────────────────────────────────────────────────────┐
- * │                            Flexbox Classes                            │
- * └───────────────────────────────────────────────────────────────────────┘
- */
-
-.d-flex {
-  @include flex;
-}
-
-.d-inline-flex {
-  @include inline-flex;
-}
-
-/*
- * ┌───────────────────────────────────────────────────────────────────────┐
- * │                            Spacer Classes                             │
- * └───────────────────────────────────────────────────────────────────────┘
- */
-
-// *  Automatically generate classes for each spacer property based on
-// *  the map key -> values.
-// *  It generates in the order
-// *  -> auto, 0, inline, block, top, right, bottom, left
-
-$spacers: (
-  "auto": auto,
-  "0": 0,
-  "1": var(--spacer-400),
-  "2": var(--spacer-500),
-  "3": var(--spacer-600),
-  "4": var(--spacer-700),
-  "5": var(--spacer-800),
-  "6": var(--spacer-900),
-);
-
-$margin: m mx my mt me mb ms;
-$padding: p px py pt pe pb pe;
+// * Automatically generate classes for each spacer property
+// * based on the $util-spacers map -> key, values.
+// * Generated in the order
+// * -> auto, 0, inline, block, top, right, bottom, left
 
 //
 // Margin
 //
-@each $key, $spacer in $spacers {
+@each $spacer, $value in $util-spacers {
   @each $class in $margin {
     @if $class == m {
-      .#{$class}-#{$key} {
-        margin: $spacer;
+      .#{$class}-#{$spacer} {
+        margin: $value;
       }
     } @else if $class == mx {
-      .#{$class}-#{$key} {
-        margin-inline: $spacer;
+      .#{$class}-#{$spacer} {
+        margin-inline: $value;
       }
     } @else if $class == my {
-      .#{$class}-#{$key} {
-        margin-block: $spacer;
+      .#{$class}-#{$spacer} {
+        margin-block: $value;
       }
     } @else if $class == mt {
-      .#{$class}-#{$key} {
-        margin-block-start: $spacer;
+      .#{$class}-#{$spacer} {
+        margin-block-start: $value;
       }
     } @else if $class == me {
-      .#{$class}-#{$key} {
-        margin-inline-end: $spacer;
+      .#{$class}-#{$spacer} {
+        margin-inline-end: $value;
       }
     } @else if $class == mb {
-      .#{$class}-#{$key} {
-        margin-block-end: $spacer;
+      .#{$class}-#{$spacer} {
+        margin-block-end: $value;
       }
     } @else if $class == ms {
-      .#{$class}-#{$key} {
-        margin-inline-start: $spacer;
+      .#{$class}-#{$spacer} {
+        margin-inline-start: $value;
       }
     } @else {
-      .#{$class}-#{$key} {
+      .#{$class}-#{$spacer} {
         margin: initial;
       }
     }
@@ -242,38 +125,38 @@ $padding: p px py pt pe pb pe;
 //
 // Padding
 //
-@each $key, $spacer in $spacers {
+@each $spacer, $value in $util-spacers {
   @each $class in $padding {
     @if $class == p {
-      .#{$class}-#{$key} {
-        padding: $spacer;
+      .#{$class}-#{$spacer} {
+        padding: $value;
       }
     } @else if $class == px {
-      .#{$class}-#{$key} {
-        padding-inline: $spacer;
+      .#{$class}-#{$spacer} {
+        padding-inline: $value;
       }
     } @else if $class == py {
-      .#{$class}-#{$key} {
-        padding-block: $spacer;
+      .#{$class}-#{$spacer} {
+        padding-block: $value;
       }
     } @else if $class == pt {
-      .#{$class}-#{$key} {
-        padding-block-start: $spacer;
+      .#{$class}-#{$spacer} {
+        padding-block-start: $value;
       }
     } @else if $class == pe {
-      .#{$class}-#{$key} {
-        padding-inline-end: $spacer;
+      .#{$class}-#{$spacer} {
+        padding-inline-end: $value;
       }
     } @else if $class == pb {
-      .#{$class}-#{$key} {
-        padding-block-end: $spacer;
+      .#{$class}-#{$spacer} {
+        padding-block-end: $value;
       }
     } @else if $class == ps {
-      .#{$class}-#{$key} {
-        padding-inline-start: $spacer;
+      .#{$class}-#{$spacer} {
+        padding-inline-start: $value;
       }
     } @else {
-      .#{$class}-#{$key} {
+      .#{$class}-#{$spacer} {
         padding: initial;
       }
     }
