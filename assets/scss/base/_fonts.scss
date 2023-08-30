@@ -7,14 +7,14 @@
   font-family: "Overpass";
   font-weight: 300;
   font-display: swap;
-  src: url(../fonts/Overpass/overpass-light.ttf);
+  src: url(../fonts/overpass/overpass-light.woff) format("woff");
 }
 
 @font-face {
   font-family: "Overpass";
   font-weight: 600;
   font-display: swap;
-  src: url(../fonts/Overpass/overpass-bold.ttf);
+  src: url(../fonts/overpass/overpass-bold.woff) format("woff");
 }
 
 // Ubuntu
@@ -22,19 +22,19 @@
   font-family: "Ubuntu";
   font-weight: 400;
   font-display: swap;
-  src: url(../fonts/Ubuntu/ubuntu-regular.ttf);
+  src: url(../fonts/ubuntu/ubuntu-regular.woff) format("woff");
 }
 
 @font-face {
   font-family: "Ubuntu";
   font-weight: 500;
   font-display: swap;
-  src: url(../fonts/Ubuntu/ubuntu-medium.ttf);
+  src: url(../fonts/ubuntu/ubuntu-medium.woff) format("woff");
 }
 
 @font-face {
   font-family: "Ubuntu";
   font-weight: 700;
   font-display: swap;
-  src: url(../fonts/Ubuntu/ubuntu-bold.ttf);
+  src: url(../fonts/ubuntu/ubuntu-bold.woff) format("woff");
 }

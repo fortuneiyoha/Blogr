@@ -1,6 +1,6 @@
 // ---------------------------------------------------
 // This file contains all styles related to
-// the introduction of the site/application.
+// the feature of the site/application.
 // ---------------------------------------------------
 
 @use "../abstracts/" as *;
@@ -8,14 +8,29 @@
 .feature {
   isolation: isolate;
   position: relative;
+  margin-block-end: var(--spacer-900);
   text-align: center;
 
   &-title {
-    font-size: var(--fs-800);
+    font-size: var(--fs-760);
+
+    @include breakpoint-up(md) {
+      font-size: var(--fs-800);
+      margin-block-end: var(--spacer-900);
+    }
   }
 
   &-sub-title {
-    font-size: var(--fs-700);
+    font-size: var(--fs-680);
+    margin-block-end: var(--spacer-500);
+
+    &:not(:first-child) {
+      margin-block-start: var(--spacer-700);
+    }
+
+    @include breakpoint-up(md) {
+      font-size: var(--fs-700);
+    }
   }
 
   @include breakpoint-up(md) {
@@ -24,10 +39,17 @@
 }
 
 .feature-editor {
+  margin-block-start: var(--spacer-900);
+
   @include breakpoint-up(md) {
     margin-block: calc(var(--spacer-400) * 10) calc(var(--spacer-400) * 7);
+  }
 
-    .feature-title {
+  .feature-title {
+    margin-block-end: var(--spacer-700);
+    text-align: center;
+
+    @include breakpoint-up(md) {
       margin-block-end: var(--spacer-900);
     }
   }
@@ -35,6 +57,8 @@
 
 .feature-mobile {
   border-radius: 0 calc(var(--spacer-400) * 8);
+  color: var(--clr-neutral-100);
+  margin-block-end: calc(var(--spacer-600) * 5.5);
 
   &::before,
   &::after {
@@ -70,6 +94,11 @@
     z-index: -2;
   }
 
+  .feature-title {
+    color: var(--clr-neutral-100);
+    margin-block-end: var(--spacer-500);
+  }
+
   @include breakpoint-up(md) {
     margin-block-end: calc(var(--spacer-400) * 6);
   }
@@ -80,10 +109,6 @@
 
   @include breakpoint-up(xxl) {
     margin-block-end: calc(var(--spacer-400) * 10);
-  }
-
-  @include breakpoint-down(md) {
-    margin-block-end: calc(var(--spacer-600) * 5.5);
   }
 }
 

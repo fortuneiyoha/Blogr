@@ -30,12 +30,21 @@
     }
   }
 
+  &-cta {
+    color: var(--clr-neutral-100);
+    text-align: center;
+  }
+
   &-title {
+    color: var(--clr-neutral-100);
     font-size: min(var(--fs-600) + 5.5vw, 3.5rem);
+    margin-block-end: var(--spacer-400);
   }
 
   &-lead {
     font-size: min(var(--fs-600) + 5.5vw, 1.2rem);
+    margin-block-end: var(--spacer-700);
+    margin-inline: auto;
   }
 
   &-cta-buttons {
@@ -53,11 +62,16 @@
   @include flex($align: center, $justify: space-between);
 }
 
-.header .container {
-  @extend %flex-center-between;
+.header {
+  margin-block-end: var(--spacer-700);
+  padding-block: var(--spacer-700);
 
-  gap: var(--gap);
-  position: relative;
+  .container {
+    @extend %flex-center-between;
+
+    gap: var(--gap);
+    position: relative;
+  }
 }
 
 // Logo: Explicit width for logo to scale
