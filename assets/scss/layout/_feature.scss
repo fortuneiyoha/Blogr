@@ -161,7 +161,7 @@
   }
 
   @include breakpoint-up(xxl) {
-    --right: -16%;
+    --right: -12%;
   }
 }
 
@@ -175,6 +175,6 @@
   }
 
   @include breakpoint-up(xxl) {
-    --left: -15%;
+    --left: -10%;
   }
 }

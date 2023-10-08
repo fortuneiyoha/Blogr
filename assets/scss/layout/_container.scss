@@ -12,19 +12,19 @@
  */
 
 .container {
-  --container-max-width: 40em;
+  --container-max-width: 40rem;
   margin-inline: auto; /* 2 */
   width: min((100% - 2rem), var(--container-max-width)); /* min([3], [1]) */
 
   @include breakpoint-up(md) {
-    --container-max-width: 50em;
+    --container-max-width: 50rem;
   }
 
   @include breakpoint-up(lg) {
-    --container-max-width: 70em;
+    --container-max-width: 70rem;
   }
 
   @include breakpoint-up(xl) {
-    --container-max-width: 75em;
+    --container-max-width: 75rem;
   }
 }

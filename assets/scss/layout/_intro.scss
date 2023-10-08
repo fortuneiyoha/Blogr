@@ -48,7 +48,7 @@
   }
 
   &-cta-buttons {
-    @include flex($justify: center);
+    @include flex($justify: center, $align: center);
 
     flex-flow: row wrap;
     gap: var(--gap);

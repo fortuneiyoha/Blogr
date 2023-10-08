@@ -24,14 +24,14 @@ Users should be able to:
 
 ### Screenshot
 
-![website preview](sm-banner/blogr.jpg)
+![website preview](blogr.jpg)
 
 ### Links
 
 <!--
-  * ┌───────────────────────────────────────────────────────────────────┐
-  * │                       Update the links URL                        │
-  * └───────────────────────────────────────────────────────────────────┘
+ ┌───────────────────────────────────────────────────────────────────┐
+ │                       Update the links URL                        │
+ └───────────────────────────────────────────────────────────────────┘
  -->
 
 - **Solution:** [Add solution URL here](https://your-solution-url.com)

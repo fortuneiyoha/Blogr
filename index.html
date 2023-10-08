@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -19,7 +19,7 @@
   <meta property="og:title" content="Blogr | A Modern Publishing Platform">
   <meta property="og:description" content="Blogr is a modern publishing platform designed to empower
     aspiring bloggers to grow their audience and build their online brand effortlessly.">
-  <meta property="og:image" content="https://blogr.pages.dev/sm-banner/blogr.jpg">
+  <meta property="og:image" content="https://blogr.pages.dev/blogr.jpg">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -27,7 +27,7 @@
   <meta property="twitter:title" content="Blogr | A Modern Publishing Platform">
   <meta property="twitter:description" content="Blogr is a modern publishing platform designed to empower
     aspiring bloggers to grow their audience and build their online brand effortlessly.">
-  <meta property="twitter:image" content="https://blogr.pages.dev/sm-banner/blogr.jpg">
+  <meta property="twitter:image" content="https://blogr.pages.dev/blogr.jpg">
   <!-- Meta Tags Generated with https://metatags.io -->
 
   <!-- Stylesheet -->
@@ -43,10 +43,9 @@
     <!-- Navigation -->
     <header class="header">
       <div class="container">
-        <!-- Logo -->
+        <a href="#main" class="visually-hidden-focusable">Skip to main content</a>
         <a href="#" class="logo"><img src="assets/images/logo.svg" alt="Logo"></a>
 
-        <!-- Nav-Toggler -->
         <button type="button" aria-expanded="false" class="nav-toggle js-nav-toggle | btn">
           <span class="visually-hidden">Toggle Navigation</span>
           <img src="assets/images/icon-hamburger.svg" alt="Menu">
@@ -115,7 +114,7 @@
     </header>
 
     <!-- CTA -->
-    <section class="intro-cta">
+    <section id="main" class="intro-cta">
       <div class="container">
         <h1 class="intro-title">A modern publishing platform</h1>
         <p class="intro-lead">Grow your audience and build your online brand</p>
@@ -132,14 +131,14 @@
     <div class="container">
       <h2 class="feature-title">Designed for the future</h2>
       <div class="grid">
-        <div class="illustration-editor illustration-reverse">
+        <div class="column illustration-editor illustration-reverse">
           <picture>
             <source media="(min-width: 52.5em)" srcset="assets/images/illustration-editor-desktop.svg">
             <img src="assets/images/illustration-editor-mobile.svg" alt="">
           </picture>
         </div>
 
-        <div>
+        <div class="column">
           <h3 class="feature-sub-title">Introducing an extensible editor</h3>
           <p class="lead">
             Blogr feature an exceedingly intuitive interface which lets you focus on one thing: creating content.
@@ -163,11 +162,11 @@
   <section class="feature feature-mobile">
     <div class="container">
       <div class="grid">
-        <div class="illustration-mobile">
+        <div class="column illustration-mobile">
           <img src="assets/images/illustration-phones.svg" alt="">
         </div>
 
-        <div>
+        <div class="column">
           <h2 class="feature-title"> State of the Art Infrastructure</h2>
           <p class="lead">
             With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
@@ -182,14 +181,14 @@
   <section class="feature feature-laptop">
     <div class="container">
       <div class="grid">
-        <div class="illustration-laptop">
+        <div class="column illustration-laptop">
           <picture>
             <source media="(min-width: 52.5em)" srcset="assets/images/illustration-laptop-desktop.svg">
             <img src="assets/images/illustration-laptop-mobile.svg" alt="">
           </picture>
         </div>
 
-        <div>
+        <div class="column">
           <h3 class="feature-sub-title">Free, open, simple</h3>
           <p class="lead">
             Blogr is a free and open source application backed by a large community of helpful developers. It supports
@@ -211,50 +210,53 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="grid">
-        <div class="column column-logo">
-          <a href="#" class="logo"><img src="assets/images/logo.svg" alt="Logo"></a>
-        </div>
+      <h4 class="visually-hidden">Footer Navigation</h4>
+      <nav>
+        <div class="grid">
+          <div class="column">
+            <a href="#" class="logo"><img src="assets/images/logo.svg" alt="Logo"></a>
+          </div>
 
-        <div class="column column-list">
-          <h5 class="footer-list-header">Product</h5>
-          
-          <ul class="footer-list">
-            <li class="footer-item"><a href="#0" class="footer-link">Overview</a></li>
-            <li class="footer-item"><a href="#0" class="footer-link">Pricing</a></li>
-            <li class="footer-item"><a href="#0" class="footer-link">Marketplace</a></li>
-            <li class="footer-item"><a href="#0" class="footer-link">Feature</a></li>
-            <li class="footer-item"><a href="#0" class="footer-link">Integrations</a></li>
-          </ul>
-        </div>
+          <div class="column">
+            <h5 class="footer-list-header">Product</h5>
+            
+            <ul class="footer-list">
+              <li class="footer-item"><a href="#0" class="footer-link">Overview</a></li>
+              <li class="footer-item"><a href="#0" class="footer-link">Pricing</a></li>
+              <li class="footer-item"><a href="#0" class="footer-link">Marketplace</a></li>
+              <li class="footer-item"><a href="#0" class="footer-link">Feature</a></li>
+              <li class="footer-item"><a href="#0" class="footer-link">Integrations</a></li>
+            </ul>
+          </div>
 
-        <div class="column column-list">
-          <h5 class="footer-list-header">Company</h5>
-          
-          <ul class="footer-list">
-            <li class="footer-item"><a href="#0" class="footer-link">About</a></li>
-            <li class="footer-item"><a href="#0" class="footer-link">Team</a></li>
-            <li class="footer-item"><a href="#0" class="footer-link">Blog</a></li>
-            <li class="footer-item"><a href="#0" class="footer-link">Careers</a></li>
-          </ul>
-        </div>
+          <div class="column">
+            <h5 class="footer-list-header">Company</h5>
+            
+            <ul class="footer-list">
+              <li class="footer-item"><a href="#0" class="footer-link">About</a></li>
+              <li class="footer-item"><a href="#0" class="footer-link">Team</a></li>
+              <li class="footer-item"><a href="#0" class="footer-link">Blog</a></li>
+              <li class="footer-item"><a href="#0" class="footer-link">Careers</a></li>
+            </ul>
+          </div>
 
-        <div class="column column-list">
-          <h5 class="footer-list-header">Connect</h5>
-          
-          <ul class="footer-list">
-            <li class="footer-item"><a href="#0" class="footer-link">Contact</a></li>
-            <li class="footer-item"><a href="#0" class="footer-link">Newsletter</a></li>
-            <li class="footer-item"><a href="#0" class="footer-link">LinkedIn</a></li>
-          </ul>
+          <div class="column">
+            <h5 class="footer-list-header">Connect</h5>
+            
+            <ul class="footer-list">
+              <li class="footer-item"><a href="#0" class="footer-link">Contact</a></li>
+              <li class="footer-item"><a href="#0" class="footer-link">Newsletter</a></li>
+              <li class="footer-item"><a href="#0" class="footer-link">LinkedIn</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </nav>
 
       <div class="attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" class="footer-link"
-          rel="noopener noreferrer" target="_blank">Frontend Mentor</a>. Coded by
-        <a href="https://github.com/fortuneiyoha/" class="footer-link" 
-        rel="noopener noreferrer" target="_blank">Fortune Iyoha</a>.
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" rel="noopener noreferrer"
+        target="_blank" class="footer-link">Frontend Mentor</a>. 
+        Coded by <a href="https://github.com/fortuneiyoha/" rel="noopener noreferrer"
+        target="_blank" class="footer-link">Fortune Iyoha</a>.
       </div>
     </div>
   </footer>

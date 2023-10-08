@@ -13,7 +13,12 @@
   gap: var(--gap);
 
   @include breakpoint-up(md) {
-    --column-count: 2;
+    --column-count: 12;
     grid-auto-flow: column;
+    justify-items: flex-start;
+
+    .column {
+      grid-column: auto/span 6;
+    }
   }
 }

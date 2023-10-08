@@ -17,7 +17,7 @@
   }
 
   &-list-header {
-    margin-block: var(--spacer-400) var(--spacer-600);
+    margin-block: var(--spacer-200) var(--spacer-600);
     font-weight: var(--fw-medium);
     color: var(--clr-neutral-100);
     font-size: var(--fs-600);
@@ -33,39 +33,30 @@
 }
 
 .footer .grid {
-  grid-auto-columns: auto;
-  place-items: flex-start center;
-
   @include breakpoint-up(sm) {
-    --column-count: 2;
+    place-items: flex-start;
   }
 
-  @include breakpoint-up(md) {
-    --column-count: 3;
-  }
+  .column {
+    @include breakpoint-up(sm) {
+      @include breakpoint-down(md) {
+        grid-column: span 6;
 
-  @include breakpoint-up(lg) {
-    --column-count: 4;
-  }
-}
+        &:first-child {
+          grid-column: span 12;
+          justify-self: center;
+        }
+      }
+    }
 
-.footer .column-logo {
-  @include breakpoint-up(sm) {
-    grid-column: span 2;
-  }
-
-  @include breakpoint-up(md) {
-    grid-column: 1;
-  }
-}
-
-.footer .column-list {
-  @include breakpoint-up(md) {
-    justify-self: flex-start;
+    @include breakpoint-up(md) {
+      grid-column: span 3;
+    }
   }
 }
 
 .attribution {
+  font-size: var(--fs-400);
   line-height: 1.8;
   margin-block-start: var(--spacer-700);
   margin-inline: auto;
@@ -73,6 +64,7 @@
   width: 70%;
 
   a {
+    font-size: inherit;
     font-weight: var(--fw-bold);
   }
 }

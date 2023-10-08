@@ -57,13 +57,13 @@ $colors: (
 
 // Gradient
 $gradient-accent: linear-gradient(
-  var(--bg-dir, to right),
+  to right,
   var(--clr-accent-1),
   var(--clr-accent-2)
 );
 
 $gradient-neutral: linear-gradient(
-  var(--bg-dir, to left),
+  to left,
   var(--clr-neutral-700),
   var(--clr-neutral-800)
 );
