@@ -35,7 +35,7 @@ Users should be able to:
  -->
 
 - **Solution:** [Add solution URL here](https://your-solution-url.com)
-- **Live Site:** [Add live site URL here](https://your-live-site-url.com)
+- **Live Site:** [https://blogr-d8j.pages.dev/](https://blogr-d8j.pages.dev/)
 
 ## My process
 
