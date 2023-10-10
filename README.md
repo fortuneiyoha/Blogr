@@ -28,12 +28,6 @@ Users should be able to:
 
 ### Links
 
-<!--
- ┌───────────────────────────────────────────────────────────────────┐
- │                       Update the links URL                        │
- └───────────────────────────────────────────────────────────────────┘
- -->
-
 - **Solution:** [Frontend Mentor: Blogr landing page](https://www.frontendmentor.io/solutions/blogr-landing-page-JF04W9clc7)
 - **Live Site:** [https://blogr-d8j.pages.dev/](https://blogr-d8j.pages.dev/)
 
