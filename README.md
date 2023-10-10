@@ -34,7 +34,7 @@ Users should be able to:
  └───────────────────────────────────────────────────────────────────┘
  -->
 
-- **Solution:** [Add solution URL here](https://your-solution-url.com)
+- **Solution:** [Frontend Mentor: Blogr landing page](https://www.frontendmentor.io/solutions/blogr-landing-page-JF04W9clc7)
 - **Live Site:** [https://blogr-d8j.pages.dev/](https://blogr-d8j.pages.dev/)
 
 ## My process
